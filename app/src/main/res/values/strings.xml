@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">x-rates</string>
+    <string name="baseline_assessment">Выгодный курс</string>
+    <string name="mdi_bank">Курс по НБТ</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

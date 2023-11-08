@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/favorableRateFragment">
+
+    <fragment
+        android:id="@+id/favorableRateFragment"
+        android:name="com.example.x_rates.FavorableRateFragment"
+        android:label="fragment_favorable_rate"
+        tools:layout="@layout/fragment_favorable_rate" />
+    <fragment
+        android:id="@+id/nbtRateFragment"
+        android:name="com.example.x_rates.NbtRateFragment"
+        android:label="fragment_nbt_rate"
+        tools:layout="@layout/fragment_nbt_rate" />
+</navigation>
