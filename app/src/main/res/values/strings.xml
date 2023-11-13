@@ -2,11 +2,10 @@
     <string name="app_name">x-rates</string>
     <string name="baseline_assessment">Выгодный курс</string>
     <string name="mdi_bank">Курс по НБТ</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="currency">Валюта</string>
     <string name="currency_sell">Продажа</string>
     <string name="currency_buy">Покупка</string>
-
-
+    <string name="left_title_return">Left Title</string>
+    <string name="the_most_fav_rate">Самый выгодный курс по переводам </string>
+    <string name="convert_by_this_rate">Конвертировать по этому курсу</string>
 </resources>

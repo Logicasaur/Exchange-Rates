@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChosenBankRateFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        >
+
+        <RelativeLayout
+            android:id="@+id/left_title_return"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:layout_alignParentStart="true"
+            tools:ignore="RelativeOverlap">
+
+            <ImageView
+                android:id="@+id/ic_chevron"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/ic_chevron"
+                android:contentDescription="TODO"
+                tools:ignore="ContentDescription,HardcodedText" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginEnd="12dp"
+                android:layout_toEndOf="@id/ic_chevron"
+                android:text="@string/left_title_return"
+                android:textSize="17sp"
+                android:textColor="#FFFFFFDE"/>
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/ic_bank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="todo"
+            android:layout_marginTop="8dp"
+            android:layout_centerInParent="true"
+            tools:ignore="ContentDescription,HardcodedText"
+            tools:srcCompat="@drawable/ic_mdi_bank" />
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_alignParentEnd="true">
+
+
+            <ImageButton
+                android:id="@+id/ic_export"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="TODO"
+                android:src="@drawable/ic_export"
+                tools:ignore="ContentDescription,HardcodedText" />
+        </RelativeLayout>
+    </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="9dp"
+            android:background="#1FFFFFFF" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/the_most_fav_rate"
+            android:textColor="#DEFFFFFF"
+            android:textSize="16sp"
+            android:alpha="0.8"
+            android:layout_marginTop="21dp"
+            android:layout_gravity="center_horizontal"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="14dp"
+            android:background="#1FFFFFFF" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="3"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/text_view_currency"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:text="@string/currency"
+                android:gravity="center_horizontal"
+                android:textColor="#FFFFFF"
+                android:alpha="0.8"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/text_view_currency_buy"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:text="@string/currency_buy"
+                android:gravity="center_horizontal"
+                android:textColor="#FFFFFF"
+                android:alpha="0.8"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/text_view_currency_sell"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:text="@string/currency_sell"
+                android:gravity="center_horizontal"
+                android:textColor="#FFFFFF"
+                android:alpha="0.8"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="23dp"
+            android:background="#1FFFFFFF" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="24dp">
+
+
+            <TextView
+                android:id="@+id/currency_value2"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#DEFFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:text="1 RUB" />
+
+            <TextView
+                android:id="@+id/currency_buy_value2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:text="0.132" />
+
+            <TextView
+                android:id="@+id/currency_sell_value2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:text="0.132" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="25dp"
+            android:background="#1FFFFFFF"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="23dp">
+
+
+            <TextView
+                android:id="@+id/currency_value3"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#DEFFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:text="1 RUB" />
+
+            <TextView
+                android:id="@+id/currency_buy_value3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:text="0.132" />
+
+            <TextView
+                android:id="@+id/currency_sell_value3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:text="0.132" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="25dp"
+            android:background="#1FFFFFFF"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="28dp">
+
+
+            <TextView
+                android:id="@+id/currency_value"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#DEFFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:text="1 RUB" />
+
+            <TextView
+                android:id="@+id/currency_buy_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:text="0.132" />
+
+            <TextView
+                android:id="@+id/currency_sell_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:text="0.132" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="25dp"
+            android:background="#1FFFFFFF"/>
+
+        <RelativeLayout
+            android:id="@+id/conversion_button_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                android:background="@drawable/corners_for_button"
+                android:backgroundTint="@color/white"
+                android:gravity="center"
+                android:paddingTop="9dp"
+                android:paddingBottom="10dp"
+                android:text="@string/convert_by_this_rate"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:backgroundTint="#3DFFFFFF"
+                android:clickable="true"
+                android:focusable="true"/>
+        </RelativeLayout>
+    </LinearLayout>
+</FrameLayout>
