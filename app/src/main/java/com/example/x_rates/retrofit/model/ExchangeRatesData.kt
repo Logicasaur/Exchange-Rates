@@ -1,16 +1,16 @@
-package com.example.x_rates
+package com.example.x_rates.retrofit.model
 
 import com.google.gson.annotations.SerializedName
 
-data class ExchangeRatesApi(
+data class ExchangeRatesData(
     @SerializedName("bank_name"    ) var bankName    : String?             = null,
-    @SerializedName("ShortName"    ) var shortName   : String?             = null,
+    @SerializedName("short_name"    ) var shortName   : String?             = null,
     @SerializedName("colors"       ) var colors      : Colors?             = Colors(),
     @SerializedName("icon"         ) var icon        : String?             = null,
     @SerializedName("is_change"    ) var isChange    : Boolean?            = null,
     @SerializedName("android_link" ) var androidLink : String?             = null,
     @SerializedName("ios_link"     ) var iosLink     : String?             = null,
-    @SerializedName("Currency"     ) var currency    : ArrayList<Currency> = arrayListOf()
+    @SerializedName("currency"     ) var currency    : ArrayList<Currency> = arrayListOf()
 )
 
 data class Colors (

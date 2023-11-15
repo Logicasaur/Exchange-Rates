@@ -5,29 +5,48 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toolbar
-import com.example.x_rates.databinding.ActivityMainBinding
+import com.example.x_rates.databinding.FragmentFavorableRateBinding
+import com.example.x_rates.retrofit.api.RetrofitInstance
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 
 class FavorableRateFragment : Fragment() {
-    private lateinit var binding: ActivityMainBinding
-    private lateinit var toolbar: Toolbar
+    private var _binding: FragmentFavorableRateBinding? = null
+    private val binding get() = _binding!!
+    private lateinit var adapter: ExchangeRatesAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_favorable_rate, container, false)
+    ): View {
+
+        _binding = FragmentFavorableRateBinding.inflate(inflater, container, false)
+
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //toolbar = view.findViewById(R.id.toolbar)
+        try {
+            CoroutineScope(Dispatchers.IO).launch {
+                val apiService = RetrofitInstance.banksApiService
+                val banks = apiService.getBanks()
 
+                withContext(Dispatchers.Main) {
+                    adapter = ExchangeRatesAdapter(banks)
+                    _binding?.recyclerViewFavorableRate?.adapter = adapter
+                }
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
 
     }
-
-
-
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }

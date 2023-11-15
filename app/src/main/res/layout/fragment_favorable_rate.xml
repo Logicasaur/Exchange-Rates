@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/fragment_favorable_rate"
-    android:backgroundTint=""
     tools:context=".FavorableRateFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,6 +18,7 @@
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="15dp"
             android:background="@drawable/corners_gradient_for_fav_rate"
+            android:outlineAmbientShadowColor="#39B8807A"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -132,7 +132,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <androidx.appcompat.widget.AppCompatButton
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
@@ -150,7 +150,9 @@
                     android:textColor="@color/white"
                     android:textSize="14sp"
                     app:backgroundTint="#3DFFFFFF"
-                    android:text="@string/convert_by_this_rate" />
+                    android:text="@string/convert_by_this_rate"
+                    android:clickable="true"
+                    android:focusable="true"/>
             </RelativeLayout>
         </LinearLayout>
 
