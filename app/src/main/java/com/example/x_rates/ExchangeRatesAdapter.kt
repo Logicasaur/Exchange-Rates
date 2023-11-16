@@ -23,10 +23,8 @@ class ExchangeRatesAdapter(private val banks: List<ExchangeRatesData>) : Recycle
                 binding.currencySellValue.text = it.sellValue
                 binding.currencyBuyValue.text = it.buyValue
             }
-
-
-
         }
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewHolder {
