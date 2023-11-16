@@ -1,172 +1,174 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_favorable_rate"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/fragment_favorable_rate"
+    android:background="@drawable/gradient_for_frame"
     tools:context=".FavorableRateFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:id="@+id/linearLayout"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/corners_gradient_for_fav_rate"
-            android:outlineAmbientShadowColor="#39B8807A"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="UselessParent">
+            android:layout_height="wrap_content">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:id="@+id/ic_bank"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="22dp"
-                    android:layout_marginTop="20dp"
-                    android:contentDescription="todo"
-                    tools:ignore="ContentDescription,HardcodedText"
-                    tools:srcCompat="@drawable/ic_mdi_bank" />
-
-                <ImageButton
-                    android:id="@+id/ic_export"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="20dp"
-                    android:foreground="?attr/selectableItemBackgroundBorderless"
-                    android:layout_marginEnd="22dp"
-                    android:background="@android:color/transparent"
-                    android:contentDescription="TODO"
-                    android:src="@drawable/ic_export"
-                    tools:ignore="ContentDescription,HardcodedText" />
-            </RelativeLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="18.52dp"
-                android:background="#1FFFFFFF" />
-
-
-            <TextView
+            <LinearLayout
+                android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="22dp"
-                android:gravity="center"
-                android:layout_marginTop="12dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/corners_gradient_for_fav_rate"
+                android:orientation="vertical"
+                tools:ignore="UselessParent">
 
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                tools:text="Самый выгодный курс по переводам" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="18dp"
-                android:background="#1FFFFFFF" />
+                    <ImageView
+                        android:id="@+id/ic_bank"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="22dp"
+                        android:layout_marginTop="20dp"
+                        android:contentDescription="todo"
+                        tools:ignore="ContentDescription,HardcodedText"
+                        tools:srcCompat="@drawable/ic_mdi_bank" />
 
-            <RelativeLayout
-                android:id="@+id/value_of_favorable_rate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal">
+                    <ImageButton
+                        android:id="@+id/ic_export"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="22dp"
+                        android:background="@android:color/transparent"
+                        android:contentDescription="TODO"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/ic_export"
+                        tools:ignore="ContentDescription,HardcodedText" />
+                </RelativeLayout>
 
-                <TextView
-                    android:id="@+id/text_view_rub_value"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"
-                    android:lineSpacingExtra="-7sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/white"
-                    android:textSize="24sp"
-                    tools:text="1000 RUB" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="18.52dp"
+                    android:background="#1FFFFFFF" />
 
-                <TextView
-                    android:id="@+id/text_view_arrow"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignBottom="@+id/text_view_rub_value"
-                    android:layout_marginStart="7dp"
-                    android:layout_toEndOf="@+id/text_view_rub_value"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:textSize="28sp"
-                    tools:text="→" />
-
-                <TextView
-                    android:id="@+id/text_view_tjs_value"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="25dp"
-                    android:layout_toEndOf="@+id/text_view_arrow"
-                    android:lineSpacingExtra="7sp"
-                    android:textColor="@color/white"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    tools:text="7676767 TJS" />
-            </RelativeLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="27dp"
-                android:background="#1FFFFFFF" />
-
-            <RelativeLayout
-                android:id="@+id/conversion_button_container"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="22dp"
-                    android:layout_marginTop="20dp"
-                    android:textAllCaps="false"
-                    android:layout_marginEnd="18dp"
-                    android:layout_marginBottom="20dp"
-                    android:background="@drawable/corners_for_button"
-                    android:backgroundTint="@color/white"
+                    android:layout_marginHorizontal="22dp"
+                    android:layout_marginTop="12dp"
                     android:gravity="center"
-                    android:paddingTop="8.5dp"
-                    android:paddingBottom="10dp"
+
                     android:textColor="@color/white"
-                    android:textSize="14sp"
-                    app:backgroundTint="#3DFFFFFF"
-                    android:text="@string/convert_by_this_rate"
-                    android:clickable="true"
-                    android:focusable="true"/>
-            </RelativeLayout>
-        </LinearLayout>
+                    android:textSize="16sp"
+                    tools:text="Самый выгодный курс по переводам" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="18dp"
+                    android:background="#1FFFFFFF" />
+
+                <RelativeLayout
+                    android:id="@+id/value_of_favorable_rate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/text_view_rub_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:lineSpacingExtra="-7sp"
+                        android:textColor="@color/white"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        tools:text="1000 RUB" />
+
+                    <TextView
+                        android:id="@+id/text_view_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/text_view_rub_value"
+                        android:layout_marginStart="7dp"
+                        android:layout_toEndOf="@+id/text_view_rub_value"
+                        android:textColor="@color/white"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        tools:text="→" />
+
+                    <TextView
+                        android:id="@+id/text_view_tjs_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="25dp"
+                        android:layout_toEndOf="@+id/text_view_arrow"
+                        android:lineSpacingExtra="7sp"
+                        android:textColor="@color/white"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        tools:text="7676767 TJS" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="27dp"
+                    android:background="#1FFFFFFF" />
+
+                <RelativeLayout
+                    android:id="@+id/conversion_button_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="22dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="18dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/corners_for_button"
+                        android:backgroundTint="@color/white"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:paddingTop="8.5dp"
+                        android:paddingBottom="10dp"
+                        android:text="@string/convert_by_this_rate"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:backgroundTint="#3DFFFFFF" />
+                </RelativeLayout>
+            </LinearLayout>
 
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView_favorable_rate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scrollbars="vertical"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-            android:layout_marginTop="14dp"
-            android:layout_marginHorizontal="16dp"/>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView_favorable_rate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/linearLayout"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="14dp"
+                android:scrollbars="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
 
 </FrameLayout>

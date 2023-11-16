@@ -1,28 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:outlineSpotShadowColor="#0A000000"
-    tools:targetApi="p">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp"
+    android:layout_marginBottom="16dp">
 <LinearLayout
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginEnd="51dp"
-    android:background="@drawable/corners_for_item"
-
-    >
-
-
+   >
 
     <ImageView
         android:id="@+id/ic_bank"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="24dp"
         android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
         tools:srcCompat="@drawable/ic_mdi_bank"
