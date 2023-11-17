@@ -61,7 +61,7 @@
                     <ImageView
                         android:id="@+id/ic_bank"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="24dp"
                         android:layout_marginStart="22dp"
                         android:layout_marginTop="20dp"
                         android:contentDescription="todo"
@@ -134,7 +134,7 @@
                         android:textColor="@color/white"
                         android:textSize="28sp"
                         android:textStyle="bold"
-                        tools:text="→" />
+                        android:text="@string/arrow" />
 
                     <TextView
                         android:id="@+id/text_view_tjs_value"

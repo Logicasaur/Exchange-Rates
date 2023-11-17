@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.x_rates.databinding.ItemFavorableRateBinding
 import com.example.x_rates.retrofit.model.ExchangeRatesData
-import kotlin.math.log
 
 class ExchangeRatesAdapter(private val banks: List<ExchangeRatesData>) : RecyclerView.Adapter<ExchangeRatesAdapter.CardViewHolder>() {
 

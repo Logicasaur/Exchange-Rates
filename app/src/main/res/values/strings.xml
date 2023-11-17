@@ -8,4 +8,5 @@
     <string name="left_title_return">Left Title</string>
     <string name="the_most_fav_rate">Самый выгодный курс по переводам </string>
     <string name="convert_by_this_rate">Конвертировать по этому курсу</string>
+    <string name="arrow">→</string>
 </resources>

@@ -15,6 +15,8 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 
+
+
 class FavorableRateFragment : Fragment() {
     private var _binding: FragmentFavorableRateBinding? = null
     private val binding get() = _binding!!
@@ -40,6 +42,19 @@ class FavorableRateFragment : Fragment() {
                 withContext(Dispatchers.Main) {
                     adapter = ExchangeRatesAdapter(banks)
                     _binding?.recyclerViewFavorableRate?.adapter = adapter
+                    val favorableCurrencies = getFavorableCurrencies(banks)
+                    Glide.with(binding.root)
+                        .load(favorableCurrencies.icon)
+                        .into(binding.icBank)
+
+                    val currency = favorableCurrencies.currency.find {it.name == "USD" }
+                    currency?.let {
+                        binding.textViewRubValue.text = "1000 ${it.name}"
+                        val buyValue = it.buyValue?.toDoubleOrNull()
+                        if (buyValue != null ) {
+                            binding.textViewTjsValue.text = "${buyValue*1000} TJS"
+                        }
+                    }
                 }
             }
         } catch (e: Exception) {
@@ -50,5 +65,24 @@ class FavorableRateFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun getFavorableCurrencies(banks: List<ExchangeRatesData>): ExchangeRatesData {
+        var mostFavorableCurrency: ExchangeRatesData? = null
+        var highestBuyValue = 0.0
+
+        for (bank in banks) {
+            val currency = bank.currency.find { it.name == "USD" }
+            currency?.let {
+                val buyValue = it.buyValue?.toDoubleOrNull()
+                if (buyValue != null) {
+                    if (buyValue > highestBuyValue) {
+                        highestBuyValue = buyValue
+                        mostFavorableCurrency = bank
+                    }
+                }
+            }
+        }
+        return mostFavorableCurrency ?: ExchangeRatesData()
     }
 }
