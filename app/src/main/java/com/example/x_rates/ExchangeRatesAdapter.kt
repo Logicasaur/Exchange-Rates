@@ -15,6 +15,7 @@ class ExchangeRatesAdapter(private val banks: List<ExchangeRatesData>) : Recycle
             Glide.with(binding.root)
                 .load(item.icon)
                 .into(binding.icBank)
+            binding.bankName.text = item.shortName
             val rubCurrency = item.currency.find { it.name == "USD" }
             Log.d("TAG_test", "bind: $item, $rubCurrency")
             rubCurrency?.let {

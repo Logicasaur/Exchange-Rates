@@ -5,11 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.example.x_rates.databinding.FragmentFavorableRateBinding
 import com.example.x_rates.retrofit.api.RetrofitInstance
 import com.example.x_rates.retrofit.model.ExchangeRatesData
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -35,7 +35,7 @@ class FavorableRateFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         try {
-            CoroutineScope(Dispatchers.IO).launch {
+            viewLifecycleOwner.lifecycleScope.launch {
                 val apiService = RetrofitInstance.banksApiService
                 val banks = apiService.getBanks()
 
@@ -47,6 +47,15 @@ class FavorableRateFragment : Fragment() {
                         .load(favorableCurrencies.icon)
                         .into(binding.icBank)
 
+                    binding.bankName.text = favorableCurrencies.shortName
+                    val color1 = favorableCurrencies.colors?.color1
+                    val color2 = favorableCurrencies.colors?.color2
+                    if (color1 != null) {
+                        R.color.color1 = color1.toInt()
+                    }
+                    if (color2 != null) {
+                        R.color.color1 = color2.toInt()
+                    }
                     val currency = favorableCurrencies.currency.find {it.name == "USD" }
                     currency?.let {
                         binding.textViewRubValue.text = "1000 ${it.name}"

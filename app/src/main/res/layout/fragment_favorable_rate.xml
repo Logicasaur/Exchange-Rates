@@ -68,6 +68,18 @@
                         tools:ignore="ContentDescription,HardcodedText"
                         tools:srcCompat="@drawable/ic_mdi_bank" />
 
+                    <TextView
+                        android:id="@+id/bank_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_toEndOf="@+id/ic_bank"
+                        android:layout_marginStart="5dp"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        tools:text="Хумо" />
+
                     <ImageButton
                         android:id="@+id/ic_export"
                         android:layout_width="wrap_content"
@@ -99,7 +111,7 @@
 
                     android:textColor="@color/white"
                     android:textSize="16sp"
-                    tools:text="Самый выгодный курс по переводам" />
+                    android:text="@string/most_favorable_rate" />
 
                 <View
                     android:layout_width="match_parent"
