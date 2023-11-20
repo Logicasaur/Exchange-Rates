@@ -1,5 +1,7 @@
 package com.example.x_rates
 
+import android.graphics.Color
+import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -50,12 +52,24 @@ class FavorableRateFragment : Fragment() {
                     binding.bankName.text = favorableCurrencies.shortName
                     val color1 = favorableCurrencies.colors?.color1
                     val color2 = favorableCurrencies.colors?.color2
-                    if (color1 != null) {
-                        R.color.color1 = color1.toInt()
+                    val colors = intArrayOf(Color.parseColor(color2), Color.parseColor(color1))
+
+
+                    val gd = GradientDrawable(
+                        GradientDrawable.Orientation.TOP_BOTTOM, colors
+                    )
+                    fun dpToPx(dp: Float): Int {
+                        val density = resources.displayMetrics.density
+                        return (dp * density).toInt()
                     }
-                    if (color2 != null) {
-                        R.color.color1 = color2.toInt()
-                    }
+
+                    val cornerRadius = dpToPx(16F)
+
+
+
+                    gd.cornerRadius = cornerRadius.toFloat()
+                    
+                    binding.linearLayoutFavorableRate.setBackgroundDrawable(gd)
                     val currency = favorableCurrencies.currency.find {it.name == "USD" }
                     currency?.let {
                         binding.textViewRubValue.text = "1000 ${it.name}"
@@ -71,6 +85,9 @@ class FavorableRateFragment : Fragment() {
         }
 
     }
+
+
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

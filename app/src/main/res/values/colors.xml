@@ -4,7 +4,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="inactive_item">#979797</color>
     <color name="active_item">#217FBC</color>
-    <color name="color1"></color>
-    <color name="color2">#000000</color>
 
 </resources>

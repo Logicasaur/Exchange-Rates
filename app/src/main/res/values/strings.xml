@@ -10,4 +10,7 @@
     <string name="convert_by_this_rate">Конвертировать по этому курсу</string>
     <string name="arrow">→</string>
     <string name="most_favorable_rate">Самый выгодный курс по переводам</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Conversion">Конвертация</string>
 </resources>

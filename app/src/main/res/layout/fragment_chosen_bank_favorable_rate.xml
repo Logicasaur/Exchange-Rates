@@ -57,9 +57,9 @@
             android:id="@+id/ic_bank"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_marginTop="8dp"
             android:contentDescription="todo"
+            android:layout_marginTop="8dp"
+            android:layout_centerInParent="true"
             tools:ignore="ContentDescription,HardcodedText"
             tools:srcCompat="@drawable/ic_mdi_bank" />
 
@@ -91,7 +91,21 @@
             android:layout_marginTop="9dp"
             android:background="#1FFFFFFF" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/the_most_fav_rate"
+            android:textColor="#DEFFFFFF"
+            android:textSize="16sp"
+            android:alpha="0.8"
+            android:layout_marginTop="21dp"
+            android:layout_gravity="center_horizontal"/>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="14dp"
+            android:background="#1FFFFFFF" />
 
         <LinearLayout
             android:layout_width="match_parent"

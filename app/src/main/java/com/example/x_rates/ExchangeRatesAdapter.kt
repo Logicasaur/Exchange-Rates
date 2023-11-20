@@ -1,5 +1,6 @@
 package com.example.x_rates
 
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.x_rates.databinding.ItemFavorableRateBinding
 import com.example.x_rates.retrofit.model.ExchangeRatesData
+
 
 class ExchangeRatesAdapter(private val banks: List<ExchangeRatesData>) : RecyclerView.Adapter<ExchangeRatesAdapter.CardViewHolder>() {
 
@@ -23,6 +25,7 @@ class ExchangeRatesAdapter(private val banks: List<ExchangeRatesData>) : Recycle
                 binding.currencySellValue.text = it.sellValue
                 binding.currencyBuyValue.text = it.buyValue
             }
+
         }
 
     }
@@ -34,7 +37,12 @@ class ExchangeRatesAdapter(private val banks: List<ExchangeRatesData>) : Recycle
 
     override fun onBindViewHolder(holder: CardViewHolder, position: Int) {
         val item = banks[position]
-        holder.bind(item)    }
+        holder.bind(item)
+        holder.itemView.setOnClickListener{
+            val intent = Intent(holder.itemView.context, ChosenBankRateFragment ::class.java)
+            holder.itemView.context.startActivity(intent)
+        }
+    }
 
     override fun getItemCount(): Int {
         return banks.size
