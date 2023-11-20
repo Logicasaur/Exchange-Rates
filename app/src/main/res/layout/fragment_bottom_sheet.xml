@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:backgroundTint="@color/active_item">
+    android:backgroundTint="@color/active_item"
+    android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -17,9 +17,9 @@
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:src="@drawable/ic_uil_multiply"
             android:background="@android:color/transparent"
             android:contentDescription="TODO"
+            android:src="@drawable/ic_uil_multiply"
             tools:ignore="ContentDescription,HardcodedText" />
 
         <TextView
@@ -33,26 +33,26 @@
             android:textSize="17sp" />
 
         <RelativeLayout
-        android:id="@+id/relativeLayout2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:focusable="true"
-        android:layout_alignParentEnd="true">
-
-        <ImageButton
-            android:id="@+id/ic_export"
+            android:id="@+id/relativeLayout2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@android:color/transparent"
+            android:layout_alignParentEnd="true"
+            android:clickable="true"
+            android:focusable="true">
 
-            android:contentDescription="TODO"
-            android:src="@drawable/ic_orange_export"
-            tools:ignore="ContentDescription,HardcodedText" />
-    </RelativeLayout>
+            <ImageButton
+                android:id="@+id/ic_export"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@android:color/transparent"
+
+                android:contentDescription="TODO"
+                android:src="@drawable/ic_orange_export"
+                tools:ignore="ContentDescription,HardcodedText" />
+        </RelativeLayout>
 
     </RelativeLayout>
 
@@ -60,38 +60,80 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/currency_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="61dp"
-        android:layout_marginStart="20dp"
-        tools:text="RUB"
-        android:textSize="32sp"
-        android:textColor="#DE000000" />
+        <TextView
+            android:id="@+id/currency_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="61dp"
+            android:layout_marginBottom="60dp"
+            android:textColor="#DE000000"
+            android:textSize="32sp"
+            tools:text="RUB" />
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="24dp"
-            android:src="@drawable/ic_chevron_down"
-            android:background="@android:color/transparent"
-            android:layout_toEndOf="@id/currency_name"
             android:layout_alignTop="@+id/currency_name"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@id/currency_name"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_chevron_down" />
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:hint="0.00"/>
+            android:layout_marginTop="61dp"
+            android:layout_marginEnd="14dp"
+            android:autofillHints=""
+            android:background="@android:color/transparent"
+            android:hint="0.00"
+            android:textColor="#DE000000"
+            android:textSize="32sp" />
 
     </RelativeLayout>
 
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/switch_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_swap_vertical" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
 
 
 
+        <TextView
+            android:id="@+id/currency_output_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="61dp"
+            android:layout_marginBottom="60dp"
+            android:textColor="#DE000000"
+            android:textSize="32sp"
+            tools:text="RUB" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="61dp"
+            android:layout_marginEnd="14dp"
+            android:autofillHints=""
+            android:background="@android:color/transparent"
+            android:hint="0.00"
+            android:textColor="#DE000000"
+            android:textSize="32sp" />
+
+    </RelativeLayout>
 
 
 </LinearLayout>
