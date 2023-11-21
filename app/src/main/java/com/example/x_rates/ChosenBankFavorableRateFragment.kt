@@ -9,22 +9,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
-import com.example.x_rates.databinding.FragmentChosenBankRateBinding
+import com.example.x_rates.databinding.FragmentChosenBankFavorableRateBinding
 import com.example.x_rates.retrofit.model.ExchangeRatesData
 
 
-class ChosenBankRateFragment : Fragment() {
+class ChosenBankFavorableRateFragment : Fragment() {
 
-    private var _binding: FragmentChosenBankRateBinding? = null
+    private var _binding: FragmentChosenBankFavorableRateBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentChosenBankRateBinding.inflate(inflater, container, false)
+        _binding = FragmentChosenBankFavorableRateBinding.inflate(inflater, container, false)
 
         return binding.root
     }
@@ -65,24 +64,18 @@ class ChosenBankRateFragment : Fragment() {
             val gd = GradientDrawable(
                 GradientDrawable.Orientation.TOP_BOTTOM, colors
             )
-            binding.linearLayoutChosenRate.setBackgroundDrawable(gd)
+            binding.linearLayoutChosenFavorableRate.setBackgroundDrawable(gd)
         }
 
         binding.leftTitleReturn.setOnClickListener {
-            val bundle = Bundle()
-            findNavController().navigate(
-                R.id.action_chosenBankRateFragment_to_favorableRateFragment,
-                bundle
-            )
+            val intent = Intent(requireContext(), FavorableRateFragment::class.java)
+            startActivity(intent)
         }
 
         binding.icExport.setOnClickListener {
             val sendIntent: Intent = Intent().apply {
                 action = Intent.ACTION_SEND
-                putExtra(Intent.EXTRA_TEXT,
-                       "1 RUB = ${binding.currencyBuyValue2} TJS, " +
-                            "1 USD = ${binding.currencyBuyValue3} TJS, " +
-                            "1 EUR = ${binding.currencyBuyValue} TJS")
+                putExtra(Intent.EXTRA_TEXT, "SMT")
                 type = "text/plain"
             }
             val shareIntent = Intent.createChooser(sendIntent, null)

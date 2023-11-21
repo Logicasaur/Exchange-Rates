@@ -1,6 +1,7 @@
 package com.example.x_rates.retrofit.model
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class ExchangeRatesData(
     @SerializedName("bank_name")
@@ -26,7 +27,7 @@ data class ExchangeRatesData(
 
     @SerializedName("currency")
     var currency: ArrayList<Currency> = arrayListOf()
-)
+): Serializable
 
 data class Colors(
 
@@ -36,7 +37,7 @@ data class Colors(
     @SerializedName("color_2")
     var color2: String? = null
 
-)
+) : Serializable
 
 data class Currency(
 
@@ -55,4 +56,4 @@ data class Currency(
     @SerializedName("buy_value")
     var buyValue: String? = null
 
-)
+) : Serializable

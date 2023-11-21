@@ -9,10 +9,23 @@
         android:id="@+id/favorableRateFragment"
         android:name="com.example.x_rates.FavorableRateFragment"
         android:label="fragment_favorable_rate"
-        tools:layout="@layout/fragment_favorable_rate" />
+        tools:layout="@layout/fragment_favorable_rate" >
+        <action
+            android:id="@+id/action_favorableRateFragment_to_chosenBankRateFragment"
+            app:destination="@id/chosenBankRateFragment" />
+    </fragment>
     <fragment
         android:id="@+id/nbtRateFragment"
         android:name="com.example.x_rates.NbtRateFragment"
         android:label="fragment_nbt_rate"
         tools:layout="@layout/fragment_nbt_rate" />
+    <fragment
+        android:id="@+id/chosenBankRateFragment"
+        android:name="com.example.x_rates.ChosenBankRateFragment"
+        android:label="fragment_chosen_bank_rate"
+        tools:layout="@layout/fragment_chosen_bank_rate" >
+        <action
+            android:id="@+id/action_chosenBankRateFragment_to_favorableRateFragment"
+            app:destination="@id/favorableRateFragment" />
+    </fragment>
 </navigation>
