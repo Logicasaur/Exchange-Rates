@@ -1,5 +1,6 @@
 package com.example.x_rates
 
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
@@ -36,6 +37,7 @@ class FavorableRateFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initRecyclerView()
         try {
             viewLifecycleOwner.lifecycleScope.launch {
                 val apiService = RetrofitInstance.banksApiService
@@ -84,6 +86,7 @@ class FavorableRateFragment : Fragment() {
             e.printStackTrace()
         }
 
+
     }
 
 
@@ -110,5 +113,32 @@ class FavorableRateFragment : Fragment() {
             }
         }
         return mostFavorableCurrency ?: ExchangeRatesData()
+    }
+
+    private fun initRecyclerView() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            val apiService = RetrofitInstance.banksApiService
+            val banks = apiService.getBanks()
+            adapter = ExchangeRatesAdapter(banks)
+            binding.recyclerViewFavorableRate.adapter = adapter
+            val onItemClickListener = object : ExchangeRatesAdapter.OnItemClickListener {
+                override fun onItemClick(item: ExchangeRatesData?) {
+                    val intent = Intent(requireContext(), ChosenBankRateFragment ::class.java)
+
+                    if (item != null) {
+                        intent.putExtra("item", item.shortName)
+                    }
+                        startActivity(intent)
+
+                }
+
+            }
+
+            adapter.setOnItemClickListener(onItemClickListener)
+
+
+
+
+        }
     }
 }

@@ -1,5 +1,6 @@
 package com.example.x_rates
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
@@ -12,6 +13,12 @@ import com.example.x_rates.retrofit.model.ExchangeRatesData
 
 class ExchangeRatesAdapter(private val banks: List<ExchangeRatesData>) : RecyclerView.Adapter<ExchangeRatesAdapter.CardViewHolder>() {
 
+    private var onItemClickListener: OnItemClickListener? = null
+
+    @SuppressLint("NotConstructor")
+    fun setOnItemClickListener(onItemClickListener: OnItemClickListener) {
+        this.onItemClickListener = onItemClickListener
+    }
     class CardViewHolder(private val binding: ItemFavorableRateBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: ExchangeRatesData) {
             Glide.with(binding.root)
@@ -30,6 +37,10 @@ class ExchangeRatesAdapter(private val banks: List<ExchangeRatesData>) : Recycle
 
     }
 
+    interface OnItemClickListener {
+        fun onItemClick(item: ExchangeRatesData?)
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewHolder {
         val itemBinging =
             ItemFavorableRateBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -39,8 +50,7 @@ class ExchangeRatesAdapter(private val banks: List<ExchangeRatesData>) : Recycle
         val item = banks[position]
         holder.bind(item)
         holder.itemView.setOnClickListener{
-            val intent = Intent(holder.itemView.context, ChosenBankRateFragment ::class.java)
-            holder.itemView.context.startActivity(intent)
+            onItemClickListener?.onItemClick(item)
         }
     }
 

@@ -162,7 +162,7 @@
                 android:textColor="#DEFFFFFF"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                tools:text="1 RUB" />
+                android:text="1 RUB" />
 
             <TextView
                 android:id="@+id/currency_buy_value2"
@@ -211,7 +211,7 @@
                 android:textColor="#DEFFFFFF"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                tools:text="1 RUB" />
+                android:text="1 USD" />
 
             <TextView
                 android:id="@+id/currency_buy_value3"
@@ -261,7 +261,7 @@
                 android:textColor="#DEFFFFFF"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                tools:text="1 RUB" />
+                android:text="1 EUR" />
 
             <TextView
                 android:id="@+id/currency_buy_value"
